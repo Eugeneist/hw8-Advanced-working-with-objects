@@ -7,6 +7,29 @@ let result = birthdayDate.toLocaleDateString();
 console.log(result);
 
 
+// TASK 2
+
+const getDiffDays = (a, b) => {
+    let firstDate = Date.parse(a);
+    let lastDate = Date.parse(b);
+    if ( isNaN(firstDate) === true || isNaN(lastDate) === true ) {
+        console.error("Введите корректные даты!");
+        return;
+    } else if (lastDate <= firstDate ) {
+        console.error("Первая дата более поздняя, чем вторая!");
+        return;
+    } else {
+        return (lastDate - firstDate) / 1000 / 60 / 60 / 24;
+    }
+}
+
+
+console.log(getDiffDays('2020-01-01', '2020-01-17')); 
+console.log(getDiffDays('2020-01-01', '2020-03-15')); 
+console.log(getDiffDays('2021-01-02', '2020-03-15')); 
+console.log(getDiffDays('222222222', '2020-03-15')); 
+
+
 // TASK 3
 
 const isWeekend = (a) => {
